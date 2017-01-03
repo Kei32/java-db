@@ -106,16 +106,6 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-war-plugin</artifactId>
-					<version>2.4</version>
-					<configuration>
-						<warSourceDirectory>src/main/webapp</warSourceDirectory>
-						<warName>java-db</warName>
-						<failOnMissingWebXml>false</failOnMissingWebXml>
-					</configuration>
-				</plugin>
-				<plugin>
 		            <groupId>org.apache.maven.plugins</groupId>
 		            <artifactId>maven-dependency-plugin</artifactId>
 		            <version>2.3</version>
@@ -138,6 +128,5 @@
 		        </plugin>
 			</plugins>
 		</pluginManagement>
-		<finalName>java-db</finalName>
 	</build>
 </project>
