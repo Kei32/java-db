@@ -50,6 +50,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="<c:url value='/lk'/>">LK</a></li>
 							<li><a href="<c:url value='/lk/settings'/>">Settings</a></li>
+							<li><a href="<c:url value='/workspace'/>">WorkSpace</a></li>
 							<li class="active"><a class="btn" href="<c:url value='/logout'/>">Logout</a></li>
 						</ul>
 					</li>

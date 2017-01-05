@@ -35,9 +35,15 @@ public class AuthController {
 		return userProfileService.findAll();
 	}
 
+	@ModelAttribute("title")
+	public String initializeTitle() {
+		return "User access";
+	}
+
+
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage(ModelMap model) {
-		model.addAttribute("title", "Hi, Welcome to login");
+		//model.addAttribute("title", "Hi, Welcome to login");
 		return "login";
 	}
 

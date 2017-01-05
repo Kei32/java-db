@@ -71,9 +71,11 @@
 
 </footer>
 
-<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<!-- JavaScript libs are placed at the end of the document so the pages load faster
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>-->
+<script src="<c:url value='/static/js/jquery-2.2.3.min.js'/>"></script>
+<script src="<c:url value='/static/js/bootstrap.min.js'/>"></script>
 <script src="<c:url value='/static/js/headroom.min.js'/>"></script>
 <script src="<c:url value='/static/js/jQuery.headroom.min.js'/>"></script>
 <script src="<c:url value='/static/js/template.js'/>"></script>
