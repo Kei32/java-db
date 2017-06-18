@@ -17,15 +17,15 @@ import javax.persistence.Table;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name="APP_USER")
+@Table(name="USER")
 public class User {
 
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
 	@NotEmpty
-	@Column(name="SSO_ID", unique=true, nullable=false)
-	private String ssoId;
+	@Column(name="LOGIN", unique=true, nullable=false)
+	private String login;
 	
 	@NotEmpty
 	@Column(name="PASSWORD", nullable=false)
@@ -48,9 +48,9 @@ public class User {
 	private String state=State.ACTIVE.getState();
 
 	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "APP_USER_USER_PROFILE", 
+	@JoinTable(name = "USER_PROFILE",
              joinColumns = { @JoinColumn(name = "USER_ID") }, 
-             inverseJoinColumns = { @JoinColumn(name = "USER_PROFILE_ID") })
+             inverseJoinColumns = { @JoinColumn(name = "PROFILE_ID") })
 	private Set<UserProfile> userProfiles = new HashSet<UserProfile>();
 
 	public int getId() {
@@ -61,12 +61,12 @@ public class User {
 		this.id = id;
 	}
 
-	public String getSsoId() {
-		return ssoId;
+	public String getLogin() {
+		return login;
 	}
 
-	public void setSsoId(String ssoId) {
-		this.ssoId = ssoId;
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 	public String getPassword() {
@@ -122,7 +122,7 @@ public class User {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + id;
-		result = prime * result + ((ssoId == null) ? 0 : ssoId.hashCode());
+		result = prime * result + ((login == null) ? 0 : login.hashCode());
 		return result;
 	}
 
@@ -137,17 +137,17 @@ public class User {
 		User other = (User) obj;
 		if (id != other.id)
 			return false;
-		if (ssoId == null) {
-			if (other.ssoId != null)
+		if (login == null) {
+			if (other.login != null)
 				return false;
-		} else if (!ssoId.equals(other.ssoId))
+		} else if (!login.equals(other.login))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", ssoId=" + ssoId + ", password=" + password
+		return "User [id=" + id + ", login=" + login + ", password=" + password
 				+ ", firstName=" + firstName + ", lastName=" + lastName
 				+ ", email=" + email + ", state=" + state + ", userProfiles=" + userProfiles +"]";
 	}

@@ -1,0 +1,51 @@
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Create course
+            <small>Simple and fast</small>
+        </h3>
+        <div class="pull-right box-tools">
+            <button type="button" class="btn btn-default btn-sm" data-widget="collapse" data-toggle="tooltip"
+                    title="Collapse">
+                <i class="fa fa-minus"></i></button>
+        </div>
+    </div>
+    <div class="box-body pad">
+        <form class="form-horizontal">
+            <div :class="'col-sm-1 '+ new_course.bg_color">
+                <span class="info-box-icon"><i :class="new_course.image_class"></i></span>
+            </div>
+            <div class="box-body col-sm-11">
+                <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Name:</label>
+                    <div class="col-sm-10">
+                        <input v-model="new_course.name" type="text" class="form-control" id="inputName" placeholder="Enter name...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputDescription" class="col-sm-2 control-label">Description:</label>
+                    <div class="col-sm-10">
+                        <input v-model="new_course.description" type="text" class="form-control" id="inputDescription"
+                               placeholder="Enter description...">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form role="form">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="abc">Header</label>
+                    <input v-model="new_course.header" type="text" class="form-control" id="abc" placeholder="Enter header...">
+                </div>
+                <div class="form-group">
+                    <label>Summary</label>
+                    <textarea v-model="new_course.summary" class="form-control" rows="4" placeholder="Enter summary..." style="resize: none;"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="box-footer" style="display: block;">
+        <button @click="cancel()" type="button" class="btn btn-danger btn-lg" style="width: 250px;">Cancel</button>
+        <button @click="save()" type="button" class="btn btn-info btn-lg pull-right" style="width: 250px;">Save</button>
+    </div>
+</div>

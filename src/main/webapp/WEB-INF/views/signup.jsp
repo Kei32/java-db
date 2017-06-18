@@ -32,11 +32,11 @@
                         <form:form method="POST" modelAttribute="user" class="form-horizontal">
 
                             <div class="top-margin">
-                                <label class="col-md-3 control-lable" for="ssoId">Login<span
+                                <label class="col-md-3 control-lable" for="login">Login<span
                                         class="text-danger">*</span></label>
-                                <form:input type="text" path="ssoId" id="ssoId" class="form-control input-sm"/>
+                                <form:input type="text" path="login" id="login" class="form-control input-sm"/>
                                 <div class="has-error">
-                                    <form:errors path="ssoId" class="help-inline"/>
+                                    <form:errors path="login" class="help-inline"/>
                                 </div>
                             </div>
 

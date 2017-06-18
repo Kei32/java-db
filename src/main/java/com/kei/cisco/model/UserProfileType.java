@@ -3,7 +3,9 @@ package com.kei.cisco.model;
 public enum UserProfileType {
 	USER("USER"),
 	DBA("DBA"),
-	ADMIN("ADMIN");
+	ADMIN("ADMIN"),
+	TEACHER("TEACHER"),
+	STUDENT("STUDENT");
 	
 	String userProfileType;
 	

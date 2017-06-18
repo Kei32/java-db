@@ -5,7 +5,8 @@ public enum State {
 	ACTIVE("Active"),
 	INACTIVE("Inactive"),
 	DELETED("Deleted"),
-	LOCKED("Locked");
+	LOCKED("Locked"),
+	BANNED("Banned");
 	
 	private String state;
 	

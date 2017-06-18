@@ -1,3 +1,4 @@
+<%@ page import="com.kei.cisco.helpers.AuthUserHelper" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="./template/header.jsp"/>
@@ -5,9 +6,16 @@
 <header id="head">
 	<div class="container">
 		<div class="row">
-			<h1 class="lead">AWESOME, CUSTOMIZABLE, FREE</h1>
-			<p class="tagline">PROGRESSUS: free business bootstrap template by <a href="http://www.gettemplate.com/?utm_source=progressus&amp;utm_medium=template&amp;utm_campaign=progressus">GetTemplate</a></p>
-			<p><a class="btn btn-default btn-lg" role="button">MORE INFO</a> <a class="btn btn-action btn-lg" role="button">DOWNLOAD NOW</a></p>
+			<h1 class="lead">EFFICIENCY, CUSTOMIZABLE, FREE</h1>
+			<p class="tagline">A simple and convenient resource for learning</p>
+			<%
+				String user = AuthUserHelper.getUserName();
+				if(!AuthUserHelper.isAutorized()) {
+			%>
+			<p><a class="btn btn-default btn-lg" role="button" href="<c:url value='/signup'/>">REGISTRATION</a> <a class="btn btn-action btn-lg" role="button" href="<c:url value='/login'/>">LOGIN</a></p>
+			<% }else{ %>
+				<a class="btn btn-action btn-lg" role="button" href="<c:url value='/workspace'/>">Go to learn</a>
+			<% } %>
 		</div>
 	</div>
 </header>
@@ -16,10 +24,9 @@
 	<!-- Intro -->
 	<div class="container text-center">
 		<br> <br>
-		<h2 class="thin">The best place to tell people why they are here</h2>
+		<h2 class="thin">The best place to build an example of your own site in order to share information with other users</h2>
 		<p class="text-muted">
-			The difference between involvement and commitment is like an eggs-and-ham breakfast:<br> 
-			the chicken was involved; the pig was committed.
+			Though this would require to set up and run a website, but do not worry as it is very simple
 		</p>
 	</div>
 	<!-- /Intro-->
@@ -28,29 +35,29 @@
 	<div class="jumbotron top-space">
 		<div class="container">
 			
-			<h3 class="text-center thin">Reasons to use this template</h3>
+			<h3 class="text-center thin">A few simple steps</h3>
 			
 			<div class="row">
 				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><h4><i class="fa fa-cogs fa-5"></i>Bootstrap-powered</h4></div>
+					<div class="h-caption"><h4><i class="fa fa-registered fa-5"></i>Register</h4></div>
 					<div class="h-body text-center">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aliquid adipisci aspernatur. Soluta quisquam dignissimos earum quasi voluptate. Amet, dignissimos, tenetur vitae dolor quam iusto assumenda hic reprehenderit?</p>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><h4><i class="fa fa-flash fa-5"></i>Fat-free</h4></div>
+					<div class="h-caption"><h4><i class="fa fa-th-large fa-5"></i>Select the course</h4></div>
 					<div class="h-body text-center">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, commodi, sequi quis ad fugit omnis cumque a libero error nesciunt molestiae repellat quos perferendis numquam quibusdam rerum repellendus laboriosam reprehenderit! </p>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><h4><i class="fa fa-heart fa-5"></i>Creative Commons</h4></div>
+					<div class="h-caption"><h4><i class="fa fa-graduation-cap fa-5"></i>Read\Study</h4></div>
 					<div class="h-body text-center">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, vitae, perferendis, perspiciatis nobis voluptate quod illum soluta minima ipsam ratione quia numquam eveniet eum reprehenderit dolorem dicta nesciunt corporis?</p>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><h4><i class="fa fa-smile-o fa-5"></i>Author's support</h4></div>
+					<div class="h-caption"><h4><i class="fa fa-smile-o fa-5"></i>Be Happy</h4></div>
 					<div class="h-body text-center">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, excepturi, maiores, dolorem quasi reprehenderit illo accusamus nulla minima repudiandae quas ducimus reiciendis odio sequi atque temporibus facere corporis eos expedita? </p>
 					</div>

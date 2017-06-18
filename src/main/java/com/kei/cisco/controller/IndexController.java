@@ -2,17 +2,10 @@ package com.kei.cisco.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import com.kei.cisco.service.AuthUserService;
+import com.kei.cisco.helpers.AuthUserHelper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -22,7 +15,6 @@ import com.kei.cisco.model.User;
 import com.kei.cisco.model.UserProfile;
 import com.kei.cisco.service.UserProfileService;
 import com.kei.cisco.service.UserService;
-import org.springframework.web.servlet.NoHandlerFoundException;
 
 @Controller
 public class IndexController {
@@ -34,11 +26,11 @@ public class IndexController {
 	UserService userService;
 
 	@Autowired
-	AuthUserService authUserService;
+	AuthUserHelper authUserHelper;
 	
 	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
-		model.addAttribute("title", "Hi, Welcome to home");
+		model.addAttribute("title", "Hi, Welcome to site");
 		return "welcome";
 	}
 
@@ -75,7 +67,7 @@ public class IndexController {
 		
 		System.out.println("First Name : "+user.getFirstName());
 		System.out.println("Last Name : "+user.getLastName());
-		System.out.println("SSO ID : "+user.getSsoId());
+		System.out.println("Login : "+user.getLogin());
 		System.out.println("Password : "+user.getPassword());
 		System.out.println("Email : "+user.getEmail());
 		System.out.println("Checking UsrProfiles....");

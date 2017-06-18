@@ -23,17 +23,5 @@ public class RoleToUserProfileConverter implements Converter<Object, UserProfile
 		return profile;
 	}
 	
-	/*
-	 * Gets UserProfile by type
-	 * @see org.springframework.core.convert.converter.Converter#convert(java.lang.Object)
-	 */
-	/*
-	public UserProfile convert(Object element) {
-		String type = (String)element;
-		UserProfile profile= userProfileService.findByType(type);
-		System.out.println("Profile ... : "+profile);
-		return profile;
-	}
-	*/
 
 }

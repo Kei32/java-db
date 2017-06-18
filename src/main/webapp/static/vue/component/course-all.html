@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-12" v-for="course in coursesList">
+        <div class="info-box" @click="openCourse(course.id)">
+            <span :class="'info-box-icon ' + course.bg_color"><i :class="course.image_class"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">{{course.name}}</span>
+                <span class="info-box-text">{{course.header}}</span>
+                <span class="progress-description">Lesson in course: {{course.lessons.length}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="info-box" @click="createCourse()">
+            <span class="info-box-icon bg-aqua-active"><i class="fa fa-plus-circle"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Create new</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,6 @@
 package com.kei.cisco.controller;
 
-import com.kei.cisco.helpers.ControllerHelper;
-import org.json.JSONArray;
+import com.kei.cisco.helpers.JsonHelper;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,10 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 
 /**
  * Created by DenisTaras on 04.01.2017.
@@ -24,7 +20,7 @@ import java.io.InputStreamReader;
 public class AdminController {
 
     @Autowired
-    ControllerHelper controllerHelper;
+    JsonHelper jsonHelper;
 
     @ResponseBody
     @RequestMapping(value = "/revers", method = RequestMethod.POST)
@@ -32,12 +28,12 @@ public class AdminController {
 
         JSONObject requestBody = null;
         try {
-            requestBody = controllerHelper.getJsonBody(request);
+            requestBody = jsonHelper.getJsonBody(request);
         } catch (IOException e) {
-            return controllerHelper.generateResponse(false, requestBody, null);
+            return jsonHelper.generateResponse(false, requestBody, null);
         }
 
-        return controllerHelper.generateResponse(true, requestBody, null);
+        return jsonHelper.generateResponse(true, requestBody, null);
     }
 
     @ResponseBody
@@ -46,10 +42,10 @@ public class AdminController {
 
         JSONObject requestBody = null;
         try {
-            requestBody = controllerHelper.getJsonBody(request);
+            requestBody = jsonHelper.getJsonBody(request);
         } catch (IOException e) {
-            return controllerHelper.generateResponse(false, requestBody, null);
+            return jsonHelper.generateResponse(false, requestBody, null);
         }
-        return controllerHelper.generateResponse(true, requestBody, requestBody);
+        return jsonHelper.generateResponse(true, requestBody, requestBody);
     }
 }

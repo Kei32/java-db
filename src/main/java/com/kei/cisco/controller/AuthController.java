@@ -2,7 +2,6 @@ package com.kei.cisco.controller;
 
 import com.kei.cisco.model.User;
 import com.kei.cisco.model.UserProfile;
-import com.kei.cisco.service.AuthUserService;
 import com.kei.cisco.service.UserProfileService;
 import com.kei.cisco.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,7 +78,7 @@ public class AuthController {
 
 		System.out.println("First Name : "+user.getFirstName());
 		System.out.println("Last Name : "+user.getLastName());
-		System.out.println("SSO ID : "+user.getSsoId());
+		System.out.println("Login : "+user.getLogin());
 		System.out.println("Password : "+user.getPassword());
 		System.out.println("Email : "+user.getEmail());
 		System.out.println("Checking UsrProfiles....");

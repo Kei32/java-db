@@ -1,0 +1,91 @@
+<div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="box box-widget widget-user">
+                <div :class="'widget-user-header ' + course.bg_color">
+                    <h3 class="widget-user-username">{{course.name}}</h3>
+                    <h5 class="widget-user-desc">{{course.description}}</h5>
+                </div>
+                <div class="widget-user-image">
+                    <span class="info-box-icon"
+                          style="border-radius: 50%;background: white;border: 1px solid rgba(0,0,0,0.2);"><i
+                            :class="course.image_class"></i></span>
+                </div>
+                <div class="box-footer">
+                    <div class="row">
+                        <div class="col-sm-4 border-right">
+                            <div class="description-block">
+                                <h5 class="description-header">3,200</h5>
+                                <span class="description-text">SALES</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 border-right">
+                            <div class="description-block">
+                                <h5 class="description-header">13,000</h5>
+                                <span class="description-text">FOLLOWERS</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="description-block">
+                                <h5 class="description-header">35</h5>
+                                <span class="description-text">PRODUCTS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="description-block">
+                                <h5 class="description-header">{{course.header}}</h5>
+                                <span class="description-text" style="text-transform: none;">{{course.summary}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <button @click="editCourse(course.id)" type="button" class="btn btn-info btn-lg">Edit</button>
+            <button @click="removeCourse(course.id)" type="button" class="btn btn-info btn-lg">Remove</button>
+        </div>
+    </div>
+    <div class="row" v-for="(lesson, index) in course.lessons">
+        <div :class="index%2 == 0 ? 'col-md-1' : 'col-md-3'"></div>
+        <div class="col-md-8">
+            <div :class="'info-box ' + lesson.bg_color" @click="openLesson(lesson.id)">
+                <span class="info-box-icon"><i :class="lesson.image_class"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">{{lesson.name}}</span>
+                    <span class="info-box-number">5,200</span>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 50%"></div>
+                    </div>
+                    <span class="progress-description">{{lesson.description}}</span>
+                </div>
+            </div>
+        </div>
+        <div :class="index%2 == 0 ? 'col-md-3' : 'col-md-1'"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="info-box bg-aqua-active" @click="createLesson(course.id)">
+                <span class="info-box-icon"><i class="fa fa-plus-circle"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Create lesson</span>
+                    <span class="info-box-number"></span>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="progress-description"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
